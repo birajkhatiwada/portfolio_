@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biraj Khatiwada</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&family=Fraunces:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="c-dot" id="cd"></div>
+<div class="c-ring" id="cr"></div>
+
+
+<!-- BOOT SCREEN -->
+<div id="boot">
+  <div class="boot-inner">
+    <div class="boot-line" id="bl0"><span class="g">BIOS v2.4.1</span> — Khatiwada Systems Inc.</div>
+    <div class="boot-line" id="bl1"><span class="d">mem check:</span> <span class="g">16384MB OK</span></div>
+    <div class="boot-line" id="bl2"><span class="d">cpu:</span> <span class="g">Brain™ 6-core @ 3.2GHz</span></div>
+    <div class="boot-line" id="bl3">&nbsp;</div>
+    <div class="boot-line" id="bl4"><span class="d">loading</span> <span class="g">portfolio.img</span><span class="d">...</span></div>
+    <div class="boot-bar-wrap"><div class="boot-bar" id="bootBar"></div></div>
+    <div class="boot-line" id="bl5"><span class="d">mounting</span> <span class="g">/dev/projects</span> <span class="d">→ OK</span></div>
+    <div class="boot-line" id="bl6"><span class="d">mounting</span> <span class="g">/dev/skills</span> <span class="d">→ OK</span></div>
+    <div class="boot-line" id="bl7"><span class="d">starting</span> <span class="g">portfolio.service</span><span class="d">...</span></div>
+    <div class="boot-line" id="bl8">&nbsp;</div>
+    <div class="boot-line" id="bl9"><span class="w">[ OK ]</span> <span class="g">System ready.</span> Welcome, visitor.</div>
+  </div>
+</div>
+
+<div class="stage">
+
+  <!-- PANEL 1: HERO -->
+  <div class="panel active" id="panel-hero" data-panel="hero">
+    <canvas class="fx" id="cvRain" style="opacity:1;z-index:1;"></canvas>
+    <canvas class="fx" id="cvParts" style="opacity:0;z-index:2;"></canvas>
+    <div id="fxToggles">
+      <button class="fx-btn active" data-fx="rain" title="Code rain">&#9993;</button>
+      <button class="fx-btn" data-fx="parts" title="Particles">&#10040;</button>
+    </div>
+    <div class="plabel">
+      <span class="plabel-num">01</span>
+      <span class="plabel-name">Home</span>
+    </div>
+    <div class="pcontent hero-content" id="heroContent">
+      <div class="eyebrow">Available for work</div>
+      <h1 class="hero-name" id="heroName"><span class="tw-cur" id="twc"></span></h1>
+      <p class="hero-role">Full-Stack Engineer &amp; Creative Technologist</p>
+      <p class="hero-desc">I'm Biraj Khatiwada — I craft high-performance web experiences at the intersection of engineering and design. Currently open to full-time roles and freelance collaborations.</p>
+      <div class="cta">
+        <a href="#" class="btn-p" onclick="goTo(1);return false;">View Work</a>
+        <a href="#" class="btn-o" onclick="goTo(4);return false;">Get in Touch</a>
+        <button class="btn-cv" id="btnCV" onclick="downloadCV()">⬇ Download CV</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">6+</div><div class="lbl">Years Exp.</div></div>
+        <div class="stat"><div class="num">40+</div><div class="lbl">Projects</div></div>
+        <div class="stat"><div class="num">12</div><div class="lbl">Clients</div></div>
+      </div>
+      <div class="watermark" aria-hidden="true">BK</div>
+    </div>
+    <div class="scroll-hint">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <span>scroll</span>
+    </div>
+  </div>
+
+  <!-- PANEL 2: PROJECTS -->
+  <div class="panel" id="panel-projects" data-panel="projects">
+    <div class="plabel">
+      <span class="plabel-num">02</span>
+      <span class="plabel-name">Projects</span>
+    </div>
+    <div class="pcontent centered-content">
+      <div class="sec-tag">Selected Work</div>
+      <div class="sec-title">Recent <em>Projects</em></div>
+      <div class="pgrid">
+        <div class="pcard feat">
+          <div>
+            <div class="pnum">01 — Featured</div>
+            <div class="ptitle">Meridian Analytics</div>
+            <p class="pdesc">Real-time data visualization platform processing 2M+ events daily with sub-second latency using WebSockets and a custom rendering engine.</p>
+            <div class="ptags"><span class="tag">React</span><span class="tag">D3.js</span><span class="tag">Rust</span><span class="tag">WebGL</span></div>
+            <a href="#" class="plink">View Case Study</a>
+          </div>
+          <div class="pvis">
+            <pre>// live event stream
+ws.on('data', (e) => {
+  graph.update(e.nodes);
+  renderer.frame();
+})
+→ 2.4M events/day
+→ p99 latency: 12ms</pre>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pnum">02</div>
+          <div class="ptitle">Fauna CMS</div>
+          <p class="pdesc">Headless CMS with visual block editor and built-in CDN. Used by 80+ independent publishers.</p>
+          <div class="ptags"><span class="tag">Next.js</span><span class="tag">Postgres</span><span class="tag">S3</span></div>
+          <a href="#" class="plink">View Project</a>
+        </div>
+        <div class="pcard">
+          <div class="pnum">03</div>
+          <div class="ptitle">Volta CLI</div>
+          <p class="pdesc">Developer toolchain manager with smart version detection. 2k+ stars on GitHub.</p>
+          <div class="ptags"><span class="tag">Go</span><span class="tag">Shell</span><span class="tag">CI/CD</span></div>
+          <a href="#" class="plink">View Project</a>
+        </div>
+        <div class="pcard">
+          <div class="pnum">04</div>
+          <div class="ptitle">Hollow UI</div>
+          <p class="pdesc">Open-source component library with radically minimal design tokens. 300+ weekly downloads.</p>
+          <div class="ptags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Storybook</span></div>
+          <a href="#" class="plink">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 3: TIMELINE -->
+  <div class="panel" id="panel-timeline" data-panel="timeline">
+    <div class="plabel">
+      <span class="plabel-num">03</span>
+      <span class="plabel-name">Timeline</span>
+    </div>
+    <div class="pcontent centered-content">
+      <div class="sec-tag">My Journey</div>
+      <div class="sec-title">Work &amp; <em>Education</em></div>
+      <div class="ttabs">
+        <button class="ttab active" onclick="switchTab('tw',this)">Work</button>
+        <button class="ttab" onclick="switchTab('te',this)">Education</button>
+      </div>
+      <div class="tsec active" id="tw">
+        <div class="tlist">
+          <div class="titem">
+            <div class="tperiod">2022 — Present</div>
+            <div class="trole">Senior Software Engineer</div>
+            <div class="torg">Vercel — Remote</div>
+            <div class="tbody">Leading frontend infrastructure for the Edge Network dashboard. Reduced cold-start latency by 40%.</div>
+          </div>
+          <div class="titem">
+            <div class="tperiod">2020 — 2022</div>
+            <div class="trole">Full-Stack Engineer</div>
+            <div class="torg">Notion — San Francisco, CA</div>
+            <div class="tbody">Built collaborative real-time editing features and a custom markdown parser.</div>
+          </div>
+          <div class="titem">
+            <div class="tperiod">2018 — 2020</div>
+            <div class="trole">Frontend Developer</div>
+            <div class="torg">Stripe — New York, NY</div>
+            <div class="tbody">Contributed to the Developer Dashboard and internal React component library adopted across 6 teams.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tsec" id="te">
+        <div class="tlist">
+          <div class="titem">
+            <div class="tperiod">2014 — 2018</div>
+            <div class="trole">B.S. Computer Science</div>
+            <div class="torg">Carnegie Mellon University</div>
+            <div class="tbody">Systems programming and HCI. Dean's List 3 years. Thesis on low-latency collaborative editing.</div>
+          </div>
+          <div class="titem">
+            <div class="tperiod">2017</div>
+            <div class="trole">Exchange Program</div>
+            <div class="torg">ETH Zürich — Switzerland</div>
+            <div class="tbody">Distributed systems and formal verification methods.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 4: SKILLS -->
+  <div class="panel" id="panel-skills" data-panel="skills">
+    <div class="plabel">
+      <span class="plabel-num">04</span>
+      <span class="plabel-name">Skills</span>
+    </div>
+    <div class="pcontent centered-content">
+      <div class="sec-tag">Capabilities</div>
+      <div class="sec-title">Skills &amp; <em>Tools</em></div>
+      <div class="sgrid">
+        <div>
+          <div class="scat-name">Frontend</div>
+          <div class="snames">
+            <span class="sname">React / Next.js</span>
+            <span class="sname">TypeScript</span>
+            <span class="sname">WebGL / Three.js</span>
+            <span class="sname">CSS &amp; Animation</span>
+            <span class="sname">Svelte</span>
+            <span class="sname">Vue.js</span>
+          </div>
+        </div>
+        <div>
+          <div class="scat-name">Backend</div>
+          <div class="snames">
+            <span class="sname">Node.js</span>
+            <span class="sname">Go</span>
+            <span class="sname">Rust</span>
+            <span class="sname">PostgreSQL</span>
+            <span class="sname">Redis</span>
+            <span class="sname">GraphQL</span>
+          </div>
+        </div>
+        <div>
+          <div class="scat-name">Infrastructure</div>
+          <div class="snames">
+            <span class="sname">Docker</span>
+            <span class="sname">Kubernetes</span>
+            <span class="sname">AWS</span>
+            <span class="sname">Terraform</span>
+            <span class="sname">CI/CD</span>
+            <span class="sname">Linux</span>
+          </div>
+        </div>
+        <div>
+          <div class="scat-name">Tooling</div>
+          <div class="snames">
+            <span class="sname">Figma</span>
+            <span class="sname">Git</span>
+            <span class="sname">Storybook</span>
+            <span class="sname">Jest / Playwright</span>
+            <span class="sname">Electron</span>
+            <span class="sname">WebSockets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 5: CONTACT -->
+  <div class="panel" id="panel-contact" data-panel="contact">
+    <div class="plabel">
+      <span class="plabel-num">05</span>
+      <span class="plabel-name">Contact</span>
+    </div>
+    <div class="pcontent centered-content">
+      <div class="contact-wrap">
+        <div class="sec-tag">Let's Talk</div>
+        <div class="sec-title">Get in <em>Touch</em></div>
+        <div class="c-tagline">Have a project in mind? <strong>Let's build something great</strong> together.</div>
+        <p class="c-blurb">Whether it's a startup idea, open-source collab, or just a technical chat — my inbox is open. I typically respond within 24 hours.</p>
+        <a href="mailto:khatiwadabiraj10@gmail.com" class="c-email">khatiwadabiraj10@gmail.com →</a>
+        <div class="cform">
+          <div class="frow">
+            <div class="fg"><label class="flabel">Name</label><input class="finput" type="text" placeholder="Your name"/></div>
+            <div class="fg"><label class="flabel">Email</label><input class="finput" type="email" placeholder="you@company.com"/></div>
+          </div>
+          <div class="fg"><label class="flabel">Message</label><textarea class="ftextarea" placeholder="Tell me about your project..."></textarea></div>
+          <button class="fsub"><span>Send Message</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /stage -->
+
+
+<div id="secOverlay"><div class="sec-cmd" id="secCmd"></div></div>
+<!-- STATUS BAR -->
+<div class="sbar">
+  <div class="sb-l">
+    <span class="sb-name">biraj khatiwada</span>
+    <span class="sb-sep">|</span>
+    <span class="sb-avail"><span class="avail-dot"></span><span>open to work</span></span>
+  </div>
+  <div class="sb-c">
+    <div class="ticker">
+      <span class="ticker-lbl" id="tLbl">now</span>
+      <span class="ticker-val" id="tVal">...</span>
+    </div>
+  </div>
+  <div class="sb-r">
+    <span id="sbWx">☀ Bay Area, CA</span>
+    <span class="sb-sep">|</span>
+    <span id="sbClk">--:--:-- PT</span>
+    <span class="sb-sep">|</span>
+    <span class="sb-term-badge" id="termBadge" title="Open terminal (` key)" onclick="ftermToggle()">&#96; terminal</span>
+  </div>
+</div>
+
+<!-- PROGRESS DOTS -->
+<div class="prog" id="prog"></div>
+
+<!-- KONAMI OVERLAY -->
+<div id="konamiOverlay">
+  <div class="konami-flash" id="konamiFlash"></div>
+  <div class="konami-screen"></div>
+  <div class="konami-scan"></div>
+  <div class="konami-vignette"></div>
+  <div class="konami-content" id="konamiContent">
+    <div class="konami-log" id="konamiLog"></div>
+    <div class="konami-granted" id="konamiGranted" data-text="ACCESS GRANTED">ACCESS GRANTED</div>
+    <div class="konami-sub" id="konamiSubtitle">[ click anywhere to exit ]</div>
+  </div>
+</div>
+
+<!-- FLOATING TERMINAL -->
+<div class="fterm" id="fterm">
+  <div class="fterm-bar" id="ftermBar">
+    <div class="fterm-dots">
+      <div class="fterm-dot close" id="ftermClose" onclick="ftermToggle(false)"></div>
+      <div class="fterm-dot min"></div>
+      <div class="fterm-dot max"></div>
+    </div>
+    <div class="fterm-title">biraj@portfolio: ~</div>
+    <div class="fterm-shortcut">` to toggle</div>
+  </div>
+  <div class="fterm-output" id="ftermOutput"></div>
+  <div class="fterm-input-row">
+    <span class="fterm-prompt">biraj@portfolio:~$</span>
+    <input class="fterm-input" id="ftermInput" type="text" placeholder="type a command..." autocomplete="off" spellcheck="false"/>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
