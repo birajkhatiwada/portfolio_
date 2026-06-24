@@ -38,7 +38,7 @@ document
   });
 
 // ── MAGNET ──
-document.querySelectorAll("a, button").forEach((el) => {
+document.querySelectorAll("a:not(.no-magnet), button:not(.no-magnet)").forEach((el) => {
   let leaveTimer = null;
   el.addEventListener("mouseenter", () => {
     clearTimeout(leaveTimer);
@@ -48,7 +48,7 @@ document.querySelectorAll("a, button").forEach((el) => {
     const r = el.getBoundingClientRect();
     const dx = e.clientX - (r.left + r.width / 2);
     const dy = e.clientY - (r.top + r.height / 2);
-    el.style.transform = `translate(${dx * 0.35}px, ${dy * 0.35}px)`;
+    el.style.transform = `translate(${dx * 0.18}px, ${dy * 0.18}px)`;
   });
   el.addEventListener("mouseleave", () => {
     el.style.transition = "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)";
@@ -70,9 +70,6 @@ function goTo(idx) {
     .querySelectorAll(".panel")
     .forEach((p) => p.classList.remove("active"));
   document.getElementById("panel-" + panelIds[idx]).classList.add("active");
-  document
-    .querySelectorAll(".pdot")
-    .forEach((d, i) => d.classList.toggle("on", i === idx));
   const sh = document.querySelector(".scroll-hint");
   if (sh) sh.style.opacity = idx === 0 ? "" : 0;
   applyFx();
@@ -90,16 +87,6 @@ document.querySelectorAll(".panel").forEach((p) => {
   });
 });
 
-// ── PROGRESS DOTS ──
-const progEl = document.getElementById("prog");
-panelIds.forEach((_, i) => {
-  const d = document.createElement("span");
-  d.className = "pdot" + (i === 0 ? " on" : "");
-  d.addEventListener("click", () => goTo(i));
-  d.addEventListener("mouseenter", () => document.body.classList.add("ch"));
-  d.addEventListener("mouseleave", () => document.body.classList.remove("ch"));
-  progEl.appendChild(d);
-});
 
 // ── SCROLL / KEYBOARD / TOUCH ──
 let wAcc = 0,

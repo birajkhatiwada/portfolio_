@@ -16,7 +16,7 @@ export default function Contact() {
             Whether it's a startup idea, open-source collab, or just a technical chat — my inbox
             is open. I typically respond within 24 hours.
           </p>
-          <a href="mailto:khatiwadabiraj10@gmail.com" className="c-email">
+          <a href="mailto:khatiwadabiraj10@gmail.com" className="c-email no-magnet">
             khatiwadabiraj10@gmail.com →
           </a>
           <div className="cform">
