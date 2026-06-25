@@ -73,6 +73,21 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
           <div className="pcard">
             <div className="pnum">04</div>
+            <div className="ptitle">Morse Code</div>
+            <p className="pdesc">
+              Android app built with a team of five at college — converts text to Morse code and
+              outputs it via vibration, flash, and sound. Integrated a Morse code API, built in
+              Java with Android Studio, and shipped using Agile/SCRUM.
+            </p>
+            <div className="ptags">
+              <span className="tag">Java</span>
+              <span className="tag">Android Studio</span>
+              <span className="tag">SCRUM</span>
+            </div>
+            <a href="https://github.com/MrPintoo/MorseCode" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div className="pcard">
+            <div className="pnum">05</div>
             <div className="ptitle">Scream Reel</div>
             <p className="pdesc">
               Horror movie tracker for groups — watch, rate, and see which scary film your crew
