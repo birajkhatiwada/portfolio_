@@ -58,6 +58,21 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
           <div className="pcard">
             <div className="pnum">03</div>
+            <div className="ptitle">Odoo Food Menu</div>
+            <p className="pdesc">
+              At Odoo we had weekly food menus as Word docs — I built a tool that converts them
+              into a clean website, automatically pulling food images from the web to go along
+              with each item.
+            </p>
+            <div className="ptags">
+              <span className="tag">Python</span>
+              <span className="tag">HTML</span>
+              <span className="tag">Web Scraping</span>
+            </div>
+            <a href="https://github.com/birajkhatiwada/OdooFoodMenu" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div className="pcard">
+            <div className="pnum">04</div>
             <div className="ptitle">Scream Reel</div>
             <p className="pdesc">
               Horror movie tracker for groups — watch, rate, and see which scary film your crew
