@@ -17,10 +17,10 @@ export default function Hero() {
         <h1 className="hero-name" id="heroName">
           <span className="tw-cur" id="twc"></span>
         </h1>
-        <p className="hero-role">Full-Stack Engineer &amp; Creative Technologist</p>
+        <p className="hero-role">Full-Stack Engineer</p>
         <p className="hero-desc">
-          I'm Biraj Khatiwada — I craft high-performance web experiences at the intersection of
-          engineering and design. Currently open to full-time roles and freelance collaborations.
+          I'm Biraj Khatiwada. When I see a situation where programming can help, I like taking
+          that step and building something for it — that's usually where my projects start.
         </p>
         <div className="cta">
           <a href="#" className="btn-p" onClick={(e) => { e.preventDefault(); window.goTo(1); }}>

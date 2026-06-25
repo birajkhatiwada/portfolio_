@@ -111,9 +111,9 @@ window.addEventListener("touchend", (e) => {
   const el = document.getElementById("heroName");
   const cursor = document.getElementById("twc");
   const lines = [
-    { t: "Building", g: false },
-    { t: "digital", g: true },
-    { t: "things.", g: false },
+    { t: "I see it.", g: false },
+    { t: "I think it.", g: true },
+    { t: "I build it.", g: false },
   ];
   const spans = lines.map((l, i) => {
     const s = document.createElement("span");
