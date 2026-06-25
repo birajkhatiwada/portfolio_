@@ -43,18 +43,17 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
           <div className="pcard">
             <div className="pnum">02</div>
-            <div className="ptitle">Kronos Time Calculator</div>
+            <div className="ptitle">Scream Reel</div>
             <p className="pdesc">
-              Built at Tesla — clocking out at the end of a shift meant doing mental math to hit
-              exactly 8 hours around a lunch break. Made this so my coworkers could just punch in
-              their times and get the right clock-out instantly.
+              Horror movie tracker for groups — watch, rate, and see which scary film your crew
+              loves most. Notifies members when someone logs a movie so everyone stays in sync.
+              Each member picks their personal top 3 favorites.
             </p>
             <div className="ptags">
-              <span className="tag">JavaScript</span>
-              <span className="tag">HTML</span>
-              <span className="tag">CSS</span>
+              <span className="tag">React</span>
+              <span className="tag">Node.js</span>
+              <span className="tag">Firebase</span>
             </div>
-            <a href="https://github.com/birajkhatiwada/kronosTimeCalculator" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
           </div>
           <div className="pcard">
             <div className="pnum">03</div>
@@ -73,6 +72,21 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
           <div className="pcard">
             <div className="pnum">04</div>
+            <div className="ptitle">Kronos Time Calculator</div>
+            <p className="pdesc">
+              Built at Tesla — clocking out at the end of a shift meant doing mental math to hit
+              exactly 8 hours around a lunch break. Made this so my coworkers could just punch in
+              their times and get the right clock-out instantly.
+            </p>
+            <div className="ptags">
+              <span className="tag">JavaScript</span>
+              <span className="tag">HTML</span>
+              <span className="tag">CSS</span>
+            </div>
+            <a href="https://github.com/birajkhatiwada/kronosTimeCalculator" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div className="pcard">
+            <div className="pnum">05</div>
             <div className="ptitle">Morse Code</div>
             <p className="pdesc">
               Android app built with a team of five at college — converts text to Morse code and
@@ -85,20 +99,6 @@ goals.add({ title: "Read 50p", pot: 10 })
               <span className="tag">SCRUM</span>
             </div>
             <a href="https://github.com/MrPintoo/MorseCode" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-          <div className="pcard">
-            <div className="pnum">05</div>
-            <div className="ptitle">Scream Reel</div>
-            <p className="pdesc">
-              Horror movie tracker for groups — watch, rate, and see which scary film your crew
-              loves most. Notifies members when someone logs a movie so everyone stays in sync.
-              Each member picks their personal top 3 favorites.
-            </p>
-            <div className="ptags">
-              <span className="tag">React</span>
-              <span className="tag">Node.js</span>
-              <span className="tag">Firebase</span>
-            </div>
           </div>
         </div>
       </div>
