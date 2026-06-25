@@ -43,6 +43,21 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
           <div className="pcard">
             <div className="pnum">02</div>
+            <div className="ptitle">Kronos Time Calculator</div>
+            <p className="pdesc">
+              Built at Tesla — clocking out at the end of a shift meant doing mental math to hit
+              exactly 8 hours around a lunch break. Made this so my coworkers could just punch in
+              their times and get the right clock-out instantly.
+            </p>
+            <div className="ptags">
+              <span className="tag">JavaScript</span>
+              <span className="tag">HTML</span>
+              <span className="tag">CSS</span>
+            </div>
+            <a href="https://github.com/birajkhatiwada/kronosTimeCalculator" className="plink plink--ghost" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+          <div className="pcard">
+            <div className="pnum">03</div>
             <div className="ptitle">Scream Reel</div>
             <p className="pdesc">
               Horror movie tracker for groups — watch, rate, and see which scary film your crew
