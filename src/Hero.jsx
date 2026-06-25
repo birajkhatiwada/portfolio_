@@ -34,17 +34,10 @@ export default function Hero() {
           </button>
         </div>
         <div className="stats">
-          <div className="stat"><div className="num">6+</div><div className="lbl">Years Exp.</div></div>
-          <div className="stat"><div className="num">40+</div><div className="lbl">Projects</div></div>
-          <div className="stat"><div className="num">12</div><div className="lbl">Clients</div></div>
+          <div className="stat"><div className="num">4+</div><div className="lbl">Years Exp.</div></div>
+          <div className="stat"><div className="num">8+</div><div className="lbl">Projects</div></div>
         </div>
         <div className="watermark" aria-hidden="true">BK</div>
-      </div>
-      <div className="scroll-hint">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-        <span>scroll</span>
       </div>
     </div>
   );
