@@ -14,6 +14,13 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;overflow:hidden;}
 *{cursor:none!important;}
+
+/* scrollbar */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--green-muted);border-radius:2px;}
+::-webkit-scrollbar-thumb:hover{background:var(--green-dim);}
+*{scrollbar-width:thin;scrollbar-color:var(--green-muted) var(--bg);}
 body{font-family:'DM Mono',monospace;background:var(--bg);color:var(--text);display:flex;flex-direction:column;}
 
 /* noise */
