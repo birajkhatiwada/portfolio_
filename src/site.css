@@ -518,8 +518,15 @@ canvas.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z
   grid-template-columns: 1fr 55%;
 }
 
-#panel-timeline:not(.active) .tl-layout {
-  visibility: hidden;
+#panel-timeline .tl-layout {
+  opacity: 0;
+  transition: opacity 0s;
+  pointer-events: none;
+}
+#panel-timeline.active .tl-layout {
+  opacity: 1;
+  transition: opacity 0.4s 0.7s ease;
+  pointer-events: all;
 }
 
 .tl-scroll {
