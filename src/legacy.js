@@ -93,17 +93,11 @@ let wAcc = 0,
   wTimer = null,
   lastW = 0;
 
-let tx = 0, ty = 0;
-window.addEventListener("touchstart", (e) => {
-  tx = e.touches[0].clientX;
-  ty = e.touches[0].clientY;
-}, { passive: true });
+let ty = 0;
+window.addEventListener("touchstart", (e) => { ty = e.touches[0].clientY; }, { passive: true });
 window.addEventListener("touchend", (e) => {
-  const dx = tx - e.changedTouches[0].clientX;
   const dy = ty - e.changedTouches[0].clientY;
-  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-    goTo(dx > 0 ? cur + 1 : cur - 1);
-  }
+  if (Math.abs(dy) > 50) goTo(dy > 0 ? cur + 1 : cur - 1);
 });
 
 // ── TYPEWRITER ──

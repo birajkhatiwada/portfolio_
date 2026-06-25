@@ -96,7 +96,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="stage" style={{ '--active-idx': active }}>
+      <div className="stage">
         {PANELS.map((p, i) => {
           const Content = CONTENT[i];
           return (
@@ -112,16 +112,6 @@ export default function App() {
         })}
       </div>
 
-      <div className="mob-dots">
-        {PANELS.map((p, i) => (
-          <button
-            key={p.id}
-            className={`mob-dot${active === i ? " mob-dot--active" : ""}`}
-            onClick={() => goTo(i)}
-            aria-label={p.name}
-          />
-        ))}
-      </div>
 
       <div id="secOverlay">
         <div className="sec-cmd" id="secCmd"></div>
