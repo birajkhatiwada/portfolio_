@@ -1,11 +1,6 @@
 export default function Projects() {
   return (
-    <div className="panel" id="panel-projects" data-panel="projects">
-      <div className="plabel">
-        <span className="plabel-num">02</span>
-        <span className="plabel-name">Projects</span>
-      </div>
-      <div className="pcontent centered-content">
+    <div className="pcontent centered-content">
         <div className="sec-tag">Selected Work</div>
         <div className="sec-title">Recent <em>Projects</em></div>
         <div className="pgrid">
@@ -102,6 +97,6 @@ goals.add({ title: "Read 50p", pot: 10 })
           </div>
         </div>
       </div>
-    </div>
   );
 }
+

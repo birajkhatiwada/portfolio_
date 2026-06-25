@@ -1,16 +1,12 @@
 export default function Hero() {
   return (
-    <div className="panel active" id="panel-hero" data-panel="hero">
+    <>
       <canvas className="fx" id="cvRain" style={{ opacity: 1, zIndex: 1 }}></canvas>
       <canvas className="fx" id="cvParts" style={{ opacity: 0, zIndex: 2 }}></canvas>
       <canvas className="fx" id="cvSnow" style={{ opacity: 0, zIndex: 3 }}></canvas>
       <div id="fxToggles">
         <button className="fx-btn active" data-fx="rain" title="Code rain">&#9993;</button>
         <button className="fx-btn" data-fx="parts" title="Particles">&#10040;</button>
-      </div>
-      <div className="plabel">
-        <span className="plabel-num">01</span>
-        <span className="plabel-name">Home</span>
       </div>
       <div className="pcontent hero-content" id="heroContent">
         <div className="eyebrow">Available for work</div>
@@ -39,6 +35,6 @@ export default function Hero() {
         </div>
         <div className="watermark" aria-hidden="true">BK</div>
       </div>
-    </div>
+    </>
   );
 }

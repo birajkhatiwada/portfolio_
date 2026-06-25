@@ -79,12 +79,7 @@ export default function Timeline() {
   const active = hoveredIndex !== null ? EVENTS[hoveredIndex] : null;
 
   return (
-    <div className="panel" id="panel-timeline" data-panel="timeline">
-      <div className="plabel">
-        <span className="plabel-num">03</span>
-        <span className="plabel-name">Timeline</span>
-      </div>
-
+    <>
       <div className="tl-layout">
 
         {/* LEFT — original scrollable event list */}
@@ -137,6 +132,6 @@ export default function Timeline() {
         </div>
 
       </div>
-    </div>
+    </>
   );
 }

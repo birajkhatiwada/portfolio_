@@ -1,11 +1,6 @@
 export default function Contact() {
   return (
-    <div className="panel" id="panel-contact" data-panel="contact">
-      <div className="plabel">
-        <span className="plabel-num">05</span>
-        <span className="plabel-name">Contact</span>
-      </div>
-      <div className="pcontent centered-content">
+    <div className="pcontent centered-content">
         <div className="contact-wrap">
           <div className="sec-tag">Let's Talk</div>
           <div className="sec-title">Get in <em>Touch</em></div>
@@ -40,6 +35,5 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

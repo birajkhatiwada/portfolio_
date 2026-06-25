@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./site.css";
 import initLegacy from "./legacy.js";
 import Hero from "./Hero.jsx";
@@ -7,7 +8,60 @@ import Timeline from "./Timeline.jsx";
 import Skills from "./Skills.jsx";
 import Contact from "./Contact.jsx";
 
+const PANELS = [
+  { id: "hero",     num: "01", name: "Home" },
+  { id: "projects", num: "02", name: "Projects" },
+  { id: "timeline", num: "03", name: "Timeline" },
+  { id: "skills",   num: "04", name: "Skills" },
+  { id: "contact",  num: "05", name: "Contact" },
+];
+
+const CONTENT = [Hero, Projects, Timeline, Skills, Contact];
+
+function Panel({ id, num, name, isActive, onClick, children }) {
+  return (
+    <motion.div
+      className={`panel${isActive ? " active" : ""}`}
+      id={`panel-${id}`}
+      data-panel={id}
+      animate={{ flex: isActive ? 5 : 0.55 }}
+      transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+      onClick={onClick}
+    >
+      <div className="plabel">
+        <span className="plabel-num">{num}</span>
+        <span className="plabel-name">{name}</span>
+      </div>
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.div
+            key={id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0, transition: { duration: 0.05 } }}
+            transition={{ opacity: { delay: 0.45, duration: 0.4 }, y: { delay: 0.45, duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
+            style={{ position: "absolute", inset: 0 }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
 export default function App() {
+  const [active, setActive] = useState(0);
+
+  const goTo = useCallback((idx) => {
+    if (idx < 0 || idx >= PANELS.length) return;
+    setActive(idx);
+  }, []);
+
+  useEffect(() => {
+    window.goTo = goTo;
+  }, [goTo]);
+
   useEffect(() => {
     if (window.__legacyInited) return;
     window.__legacyInited = true;
@@ -59,11 +113,19 @@ export default function App() {
       </div>
 
       <div className="stage">
-        <Hero />
-        <Projects />
-        <Timeline />
-        <Skills />
-        <Contact />
+        {PANELS.map((p, i) => {
+          const Content = CONTENT[i];
+          return (
+            <Panel
+              key={p.id}
+              {...p}
+              isActive={active === i}
+              onClick={() => { if (active !== i) goTo(i); }}
+            >
+              <Content />
+            </Panel>
+          );
+        })}
       </div>
 
       <div id="secOverlay">

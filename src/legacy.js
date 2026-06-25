@@ -66,24 +66,24 @@ function goTo(idx) {
   if (idx < 0 || idx >= panelIds.length || transitioning) return;
   transitioning = true;
   cur = idx;
-  document
-    .querySelectorAll(".panel")
-    .forEach((p) => p.classList.remove("active"));
-  document.getElementById("panel-" + panelIds[idx]).classList.add("active");
-  const sh = document.querySelector(".scroll-hint");
-  if (sh) sh.style.opacity = idx === 0 ? "" : 0;
+  // React controls active class — just run side effects
   applyFx();
   showSecCmd(panelIds[idx]);
   setTimeout(() => (transitioning = false), 900);
 }
-window.goTo = goTo;
+// React sets window.goTo — wrap to keep side effects
+const _reactGoTo = window.goTo;
+window.goTo = (idx) => {
+  if (_reactGoTo) _reactGoTo(idx);
+  goTo(idx);
+};
 
-// click idle panel
+// click idle panel — React handles active state, we just call goTo
 document.querySelectorAll(".panel").forEach((p) => {
   p.addEventListener("click", (e) => {
     if (e.target.closest("a, button")) return;
     if (!p.classList.contains("active"))
-      goTo(panelIds.indexOf(p.dataset.panel));
+      window.goTo(panelIds.indexOf(p.dataset.panel));
   });
 });
 

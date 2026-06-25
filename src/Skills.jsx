@@ -1,11 +1,6 @@
 export default function Skills() {
   return (
-    <div className="panel" id="panel-skills" data-panel="skills">
-      <div className="plabel">
-        <span className="plabel-num">04</span>
-        <span className="plabel-name">Skills</span>
-      </div>
-      <div className="pcontent centered-content">
+    <div className="pcontent centered-content">
         <div className="sec-tag">Capabilities</div>
         <div className="sec-title">Skills &amp; <em>Tools</em></div>
         <div className="sgrid">
@@ -55,6 +50,5 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
