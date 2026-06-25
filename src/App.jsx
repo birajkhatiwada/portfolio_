@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import "./site.css";
 import initLegacy from "./legacy.js";
 import Hero from "./Hero.jsx";
@@ -20,33 +19,18 @@ const CONTENT = [Hero, Projects, Timeline, Skills, Contact];
 
 function Panel({ id, num, name, isActive, onClick, children }) {
   return (
-    <motion.div
+    <div
       className={`panel${isActive ? " active" : ""}`}
       id={`panel-${id}`}
       data-panel={id}
-      animate={{ flex: isActive ? 5 : 0.55 }}
-      transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
       onClick={onClick}
     >
       <div className="plabel">
         <span className="plabel-num">{num}</span>
         <span className="plabel-name">{name}</span>
       </div>
-      <AnimatePresence mode="wait">
-        {isActive && (
-          <motion.div
-            key={id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 0, transition: { duration: 0.05 } }}
-            transition={{ opacity: { delay: 0.45, duration: 0.4 }, y: { delay: 0.45, duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
-            style={{ position: "absolute", inset: 0 }}
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {children}
+    </div>
   );
 }
 
