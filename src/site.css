@@ -713,3 +713,95 @@ canvas.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z
 /* ── WEATHER FX ── */
 #lightning{position:fixed;inset:0;opacity:0;pointer-events:none;z-index:9000;background:#e8f0ff;transition:opacity .07s;}
 .weather-transition{transition:color .8s,background-color .8s,border-color .8s,box-shadow .8s;}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  /* restore scroll, hide cursor */
+  html, body { overflow: auto; height: auto; }
+  * { cursor: auto !important; }
+  .c-dot, .c-ring { display: none; }
+
+  /* stage: vertical stack */
+  .stage {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* panels: full width, auto height, always open */
+  .panel {
+    flex: none !important;
+    width: 100%;
+    min-height: 100svh;
+    transition: none;
+    border-right: none;
+    border-bottom: 1px solid var(--glow2);
+  }
+  .panel:last-child { border-bottom: none; }
+
+  /* hide idle labels */
+  .plabel { display: none; }
+
+  /* content always visible */
+  .pcontent {
+    position: relative;
+    inset: auto;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transition: none !important;
+    padding: 48px 24px 60px;
+    overflow: visible;
+    contain: none;
+    height: auto;
+    min-height: 100svh;
+  }
+  .panel.active .pcontent { transition: none !important; }
+
+  /* hero */
+  .hero-name { font-size: clamp(32px, 9vw, 52px) !important; }
+  .hero-role { font-size: 14px !important; }
+  .cta { flex-wrap: wrap; gap: 8px; }
+  .btn-p, .btn-o, .btn-cv { width: 100%; justify-content: center; text-align: center; }
+  .watermark { font-size: 80px; }
+
+  /* projects grid: 1 column */
+  .pgrid { grid-template-columns: 1fr; }
+  .pcard.feat { grid-template-columns: 1fr; }
+  .pvis { display: none; }
+
+  /* timeline: hide map, single column */
+  .tl-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transition: none !important;
+    height: auto;
+    min-height: 100svh;
+  }
+  #panel-timeline .tl-layout { opacity: 1 !important; transition: none !important; }
+  .tl-right { display: none; }
+  .tl-scroll { padding: 48px 24px 60px; overflow: visible; }
+
+  /* skills grid */
+  .sgrid { grid-template-columns: 1fr !important; }
+
+  /* status bar */
+  .sbar { padding: 0 16px; font-size: 9px; }
+  .sb-c { display: none; }
+  .sb-r { gap: 6px; }
+  #sbWx { display: none; }
+
+  /* floating terminal */
+  .fterm { width: calc(100vw - 24px) !important; left: 12px !important; right: 12px !important; bottom: 48px !important; }
+
+  /* contact form */
+  .frow { flex-direction: column; }
+  .cform { gap: 12px; }
+
+  /* section titles */
+  .sec-title { font-size: clamp(22px, 6vw, 36px); }
+}
