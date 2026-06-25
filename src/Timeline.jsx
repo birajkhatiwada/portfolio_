@@ -17,8 +17,10 @@ const EVENTS = [
     role: "Software Engineer",
     markerId: "sf",
     bullets: [
-      "Developed and maintained the Odoo ERP system — a comprehensive business management platform spanning finance, CRM, and inventory",
-      "Built and shipped full-stack features across Python/Odoo ORM backend and OWL frontend framework",
+      "Develop and maintain features across Odoo's ERP suite — spanning finance, CRM, inventory, and more",
+      "Build full-stack functionality using Python and the Odoo ORM on the backend, and the OWL framework on the frontend",
+      "Collaborate with cross-functional teams to scope, design, and ship product improvements",
+      "Participate in code reviews and contribute to internal tooling to improve team workflows",
     ],
   },
   {
