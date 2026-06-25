@@ -582,8 +582,8 @@ function downloadCV() {
   });
   setTimeout(function () {
     var a = document.createElement("a");
-    a.href = "#";
-    a.download = "biraj_khatiwada_cv.pdf";
+    a.href = "/Biraj_Resume.pdf";
+    a.download = "Biraj_Resume.pdf";
     a.click();
     btn.classList.remove("compiling");
     setTimeout(function () {
